@@ -11,4 +11,3 @@ public class Physics : MonoBehaviour
         
     }
 }
-0
