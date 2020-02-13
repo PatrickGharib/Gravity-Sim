@@ -287,13 +287,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc8d366a7a26e945a23af1432e65e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  star: {fileID: 3539182099613133494, guid: 0ecafc55c21d6d94ab00afb6a73caf34, type: 3}
+  star: {fileID: 8240448859876576067, guid: 91b31a12055a52c4fb692ca6a702b0c2, type: 3}
   parentToSet: {fileID: 279939881}
   rb: {fileID: 0}
   rb2: {fileID: 0}
-  starsToSpawn: 10
-  snakesToSpawn: 300
-  moveSpeed: 0
+  starsToSpawn: 15
+  snakesToSpawn: 10
+  moveSpeed: 43
+  maxSpeed: 121
 --- !u!4 &280506723
 Transform:
   m_ObjectHideFlags: 0
@@ -908,7 +909,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0.0034754775, y: 0.39825353, z: -0.008004513, w: 0.9172338}
-  m_LocalPosition: {x: 0, y: 31.7, z: 0}
+  m_LocalPosition: {x: 0, y: 100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

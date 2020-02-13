@@ -14,17 +14,17 @@ public class StarSpawner : MonoBehaviour
     public int starsToSpawn = 300;
     [Range(0, 100)]
     public int snakesToSpawn = 10;
-    [Range(0, 10000)]
-    public float moveSpeed;
+    [Range(0, 500)]
+    public float moveSpeed = 1;
     [Range(0,500)]
-    public int maxSpeed;
+    public int maxSpeed = 50;
 
     private List<List<GameObject>> starList = new List<List<GameObject>>();
     IEnumerator ChangeSpeed()
     {
         while (true)
         {
-            moveSpeed = (moveSpeed*1.01f) % maxSpeed +1;
+            moveSpeed = (moveSpeed) % maxSpeed +1;
            
             yield return  new WaitForSeconds(.1f);
         }
@@ -62,11 +62,11 @@ public class StarSpawner : MonoBehaviour
         for (int i = 0; i < starList.Count; i++)
         {
             List<GameObject> list = starList[i];
-            for (int j = 0; j < list.Count -1; j++)
+            for (int j = 0; j < list.Count; j++)
             {
                 GameObject currentStar = list[j];
                 rb = currentStar.GetComponent<Rigidbody>();
-                GameObject attractorStar = list[j+1];
+                GameObject attractorStar;//a = list[j+1];
 
                 if (j == list.Count - 1)
                 {
@@ -78,7 +78,7 @@ public class StarSpawner : MonoBehaviour
 
                 }
                 currentStar.transform.position = Vector3.MoveTowards(currentStar.transform.position, attractorStar.transform.position, moveSpeed * Time.deltaTime);
-                //attractorStar.transform.position = Vector3.MoveTowards(attractorStar.transform.position, currentStar.transform.position, moveSpeed * Time.deltaTime);
+                attractorStar.transform.position = Vector3.MoveTowards(attractorStar.transform.position, currentStar.transform.position, moveSpeed * Time.deltaTime);
                 //currentStar.transform.position = currentStar.transform.position + new Vector3(.1f, 0f, 0f);
             }
             
